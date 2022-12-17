@@ -6,15 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-   
-
- console.log('====================================');
-//  console.log(error);
- console.log('====================================');
-
- 
-
-
+   const router = useRouter()
   async function handleLogin(event: React.FormEvent) {
     event.preventDefault();
 
@@ -69,7 +61,7 @@ const Login = () => {
               />
             </label>
           </div>
-          {error && <p>{error}</p>}
+        
           <div className="form-group">
             <button
               type="submit"
