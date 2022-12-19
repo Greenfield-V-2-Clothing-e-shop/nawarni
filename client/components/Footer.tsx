@@ -39,11 +39,10 @@ const Footer = () => {
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
-                <i className="fas fa-gem me-3"></i>Company name  Trendy-Shop
+                <i className="fas fa-gem me-3"></i>NAWARNI 
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit.
+                Here we present a tunisian-american e commmerce that give a man a classy and trendy clothes
               </p>
             </div>
     
@@ -53,7 +52,7 @@ const Footer = () => {
               </h6>
               <p>
 
-                <a href="#!" className="text-reset">All-prodects</a>
+                <a href="/products" className="text-reset">All-prodects</a>
               </p>
               <p>
                 <a href="#!" className="text-reset">shoes</a>
