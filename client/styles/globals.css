@@ -158,10 +158,11 @@ input{
     outline: none;
     width: 100%;
     background-color: rgb(247, 247, 247);
+    color:#000;
 }
 input:focus::-webkit-input-placeholder
 {
-      color:transparent;
+      color:black;
 }
 .btn{
     background-color: #000;
@@ -200,4 +201,76 @@ a:hover{
 }
 .bt{
   width: 200px;
+}
+
+.ba7lous{
+    background: #cecaca;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  
+}
+
+.blok{
+    color: #251001;
+font-weight: bold;
+display: block;
+width: 150px;
+float: left;
+margin-bottom: 10px;
+
+}
+
+.btn-add-p{
+cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.btn-add-p:hover{
+    background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+btn-add-p:active{
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.ba7lousD{
+    cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #8a0505;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+.ba7lousD:hover{
+    background: #dd0d0d;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.ba7lousU{
+    cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #0501d6;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.ba7lousU:hover{
+    background: #4504be;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
