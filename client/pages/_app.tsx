@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app' 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../styles/Contact.css"
 import Layout from '../components/layout'
+import "../styles/Contact.css"
 
 function MyApp({ Component, pageProps }:any) {
   return (
