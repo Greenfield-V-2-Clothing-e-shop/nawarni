@@ -17,7 +17,7 @@ export default function Contact(){
       name,
       email,
       tel,
-      message
+      message,
     }
     await fetch('/api/contact', {
       method: 'POST',

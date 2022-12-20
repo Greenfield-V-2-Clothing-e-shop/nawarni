@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 import { useRouter } from "next/router";
 import axios from 'axios'
 const Login = () => {
@@ -34,45 +35,43 @@ const Login = () => {
   }
 
   return (
-    <div className="col-md-12 row ">
-      <div className="card1 card-container">
-      
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label>
-              Email:
-              <input
-                type="text"
-                className="form-control"
-                // error={error.email}
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </label>
-          </div>
-          <div>
-            <label>
-              Password:
-              <input
-                type="password"
-                className="form-control"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </label>
-          </div>
-        
-          <div className="form-group">
-            <button
-              type="submit"
-              className="btn btn-primary btn-block"
-            >
-              Login
-            </button>
-          </div>
-        </form>
+    <div className="backLogin">
+    <div className="Auth-form-container">
+    <form className="Auth-form" onSubmit={handleLogin}>
+      <div className="Auth-form-content">
+        <h3 className="Auth-form-title">Sign In</h3>
+        <div className="form-group mt-3">
+          <label>Email address</label>
+          <input
+            type="email"
+            className="form-control mt-1"
+            placeholder="Enter email"
+            value={email}
+            onChange={(event)=>setEmail(event.target.value)}
+          />
+        </div>
+        <div className="form-group mt-3">
+          <label>Password</label>
+          <input
+            type="password"
+            className="form-control mt-1"
+            placeholder="Enter password"
+            value={password}
+            onChange={(event)=>setPassword(event.target.value)}
+          />
+        </div>
+        <div className="d-grid gap-2 mt-3">
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </div>
+        <p className="forgot-password text-right mt-2">
+          Forgot <a href="#">password?</a>
+        </p>
       </div>
-    </div>
+    </form>
+  </div>
+  </div>
   );
 };
 

@@ -11,7 +11,10 @@
   padding:50px;
   /* Setup */
   position: relative;
-  background-image: url("https://i.ibb.co/Czg5g51/Wallpaper-Dog-20482365.jpg");
+  background-image: url("https://images.unsplash.com/photo-1532202193792-e95ef22f1bce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHQlMjBzaGlydCUyMGJhY2t8ZW58MHx8MHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size:cover
+
 }
 
 .section-header{
