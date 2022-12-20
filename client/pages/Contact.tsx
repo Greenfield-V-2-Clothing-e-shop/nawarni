@@ -1,4 +1,5 @@
 import React,{useState} from "react"
+import Popup from 'reactjs-popup';
 
 
 export default function Contact(){
@@ -6,10 +7,12 @@ export default function Contact(){
   const [email, setEmail]=useState<string>('')
   const [tel,setTel]=useState<string>('')
   const [message, setMessage]=useState<string>('')
+  const [popup, setPopup]=useState<Boolean>(false)
 
   const handleSubmit= async(e: React.SyntheticEvent)=>{
     e.preventDefault()
-    console.log('sending')
+    setPopup(true)
+    console.log('sending') 
     let data:any={
       name,
       email,
@@ -24,7 +27,7 @@ export default function Contact(){
       },
       body: JSON.stringify(data)
     }).then((res) => {
-      console.log('Response received')
+        console.log('Response received')
       if (res.status === 200) {
         console.log('Response succeeded!')
       }
@@ -38,7 +41,7 @@ export default function Contact(){
 				<h1 className="section-header">Get in <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
 				<h3 className="hashthree">We provide you with the finest wears</h3>
 			</div>
-			<div className="contact-section">
+			<div className="contact-section" >
 			<div className="container">
 				<form className="elform"  
   //       onSubmit={(e: React.SyntheticEvent) => {
@@ -79,9 +82,13 @@ export default function Contact(){
 			  			 	<textarea  className="form-control" id="description" placeholder="Enter Your Message" onChange={(e)=>setMessage(e.target.value)}></textarea>
 			  			</div>
 			  			<div>
-
 			  				<button type="submit" className="btn1" onClick={handleSubmit}>  Send Message</button>
 			  			</div>
+              <div>
+                {popup? <div className="alert alert-success">
+  <strong>Success!</strong> Your message I sent to our Email, we will contact you :D
+</div>:null}
+              </div>
 			  			
 					</div>
 				</form>

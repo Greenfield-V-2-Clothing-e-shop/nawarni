@@ -12,10 +12,10 @@ export default function sendIt (req:any, res:any) {
   const mailData={
     from:'demo@demo.com',
     to:'nawarniproject@gmail.com',
-    subject: `Message from : ${req.body.name}`,
+    subject: `Message from : ${req.body.name}` + ` Number : ${req.body.tel}`,
     email: `email : ${req.body.email}`,
-    tel: `tel : ${req.body.number}`,
-    text: req.body.message,
+    tel: `tel : ${req.body.tel}`,
+    text: req.body.message
   }
 console.log(mailData)
   transporter.sendMail(mailData, function (err:any, info:any) {
