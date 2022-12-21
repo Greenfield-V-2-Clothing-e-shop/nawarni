@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface Products {
   Product: String;
@@ -14,7 +15,7 @@ interface Products {
 
 export default function admin(event: any) {
   const router = useRouter();
-
+  // const { id } = router.query;
   const [products, setProducts] = useState<Products[]>([]);
   const [product, setProduct] = useState("");
   const [category, setCategory] = useState("");
@@ -33,12 +34,16 @@ export default function admin(event: any) {
         Price: price,
       });
 
-      router.push("/admin");
+      router.push("/admin/admin");
     } catch (error) {
       console.log(error);
     }
   };
-
+  // const updateProduct = async () => {
+  //   await axios.put(`http://localhost:5000/prod/${e._id}`)
+  //                       .then((res) => {
+  //                         console.log(res)})
+  // }
   useEffect(() => {
     axios
       .get<Products[]>("http://localhost:5000/prod/prod")
@@ -53,7 +58,7 @@ export default function admin(event: any) {
         <div className="mx-auto w-full max-w-[550px]">
           <form onSubmit={addProduct} className="ba7lous ">
             <div className="mb-5">
-              <label className="blok">Add Your Product :</label>
+              <label className="blok"> Product :</label>
               <input
                 type="text"
                 name="name"
@@ -67,7 +72,7 @@ export default function admin(event: any) {
               />
             </div>
             <div className="mb-5">
-              <label className="blok">Category :</label>
+              <label className="blok"> Category :</label>
               <input
                 type="text"
                 name="text"
@@ -81,7 +86,7 @@ export default function admin(event: any) {
               />
             </div>
             <div className="mb-5">
-              <label className="blok">Image :</label>
+              <label className="blok"> Image :</label>
               <input
                 type="text"
                 name="subject"
@@ -95,7 +100,7 @@ export default function admin(event: any) {
               />
             </div>
             <div className="mb-5">
-              <label className="blok">Price $ :</label>
+              <label className="blok"> Price $ :</label>
               <input
                 type="text"
                 name="subject"
@@ -110,7 +115,7 @@ export default function admin(event: any) {
             </div>
 
             <div className="mb-5">
-              <label className="blok">Description :</label>
+              <label className="blok"> Description :</label>
               <input
                 type="text"
                 name="message"
@@ -124,10 +129,7 @@ export default function admin(event: any) {
               ></input>
             </div>
             <div>
-              <button
-                className="btn-add-p"
-                type="submit"
-              >
+              <button className="btn-add-p" type="submit">
                 Add Product
               </button>
             </div>
@@ -164,9 +166,18 @@ export default function admin(event: any) {
                 >
                   Remove
                 </button>
-                <button type="button" className="ba7lousU">
-                  Update
-                </button>
+                {/* <Link href={`edit/${e._id}`} query={e}> */}
+                  <button
+                    type="button"
+                    className="ba7lousU"
+                    onClick={() => {
+                      console.log(e._id);
+                      router.push(`/admin/edit/${e._id}`);
+                    }}
+                  >
+                    Edit
+                  </button>
+                {/* </Link> */}
               </div>
             </div>
           );
