@@ -33,8 +33,8 @@ const E =()=>{
 axios
       .put(`http://localhost:5000/prod/${ID}`, form)
       .then((res) => {
-        alert("hello world");
-      router.push("/admin/admin");
+        // alert("hello world");
+      
       })
         
         
@@ -102,7 +102,10 @@ axios
               ></input>
             </div>
             <div>
-              <button type="submit" className="ba7lousU">
+              <button type="submit" className="ba7lousU"
+              onClick={(e)=>{
+              e.preventDefault()
+              router.push("/products")}}>
                 Update
               </button>
             </div>

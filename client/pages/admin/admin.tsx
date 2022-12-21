@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useRouter } from "next/router";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface Products {
   Product: String;
@@ -34,7 +34,7 @@ export default function admin(event: any) {
         Price: price,
       });
 
-      router.push("/admin/admin");
+      router.push("/products");
     } catch (error) {
       console.log(error);
     }
@@ -160,6 +160,7 @@ export default function admin(event: any) {
                       .delete(`http://localhost:5000/prod/${e._id}`)
                       .then((res) => {
                         console.log(res);
+                        window.location.reload()
                         console.log(e._id);
                       });
                   }}
