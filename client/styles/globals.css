@@ -16,6 +16,7 @@ a {
 
 * {
   box-sizing: border-box;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -158,10 +159,11 @@ input{
     outline: none;
     width: 100%;
     background-color: rgb(247, 247, 247);
+    color:#000;
 }
 input:focus::-webkit-input-placeholder
 {
-      color:transparent;
+      color:black;
 }
 .btn{
     background-color: #000;
@@ -201,4 +203,3 @@ a:hover{
 .bt{
   width: 200px;
 }
-
