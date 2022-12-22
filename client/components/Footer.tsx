@@ -8,7 +8,7 @@ const Footer = () => {
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks: </span>
-          <a href="/login" className="me-4 text-reset">
+          <a href="/signup" className="me-4 text-reset">
             <i >Create an acount</i>
           </a>
         </div>
@@ -55,13 +55,13 @@ const Footer = () => {
                 <a href="/products" className="text-reset">All-prodects</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">shoes</a>
+                <a href="/Shoes" className="text-reset">shoes</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">pants</a>
+                <a href="/Jean" className="text-reset">pants</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">T-shirt</a>
+                <a href="/Tshirt" className="text-reset">T-shirt</a>
 
               
 
@@ -73,16 +73,13 @@ const Footer = () => {
                 Useful links
               </h6>
               <p>
-                <a href="#!" className="text-reset">Pricing</a>
+                <a href="https://www.hermes.com/us/en/" className="text-reset">hermes</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">Settings</a>
+                <a href="https://www.louisvuitton.com/dispatch" className="text-reset">louis vuitton</a>
               </p>
               <p>
-                <a href="#!" className="text-reset">Orders</a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">Help</a>
+                <a href="/Contact" className="text-reset">Help</a>
               </p>
             </div>
           </div>
