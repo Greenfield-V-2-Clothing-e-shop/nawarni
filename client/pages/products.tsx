@@ -13,13 +13,7 @@ export const getStaticProps=async()=>{
 return {
   props:{products:data,tshirt:tshirt,Jean:Jean,Baskets:Baskets}
 }
-
 }
-
-
-
-
-
 const Products = (props:any) => {
  const add =(body :any)=>{
     axios.post("http://localhost:5000/cart/cart",body)
