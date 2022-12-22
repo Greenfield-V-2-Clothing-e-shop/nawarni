@@ -28,7 +28,7 @@ const NavBar = () => {
         </div>
       </div>
       <form className="form-inline">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <input className="form-control mr-sm-2" type="search" placeholder="ba33" aria-label="Search" />
       </form>
       <div className="navbar-nav" style={{ height: "60%", width: "20%", marginLeft: "10%" }} >
         {/* {userAgent.role} */}
