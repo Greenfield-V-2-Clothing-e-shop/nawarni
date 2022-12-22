@@ -30,7 +30,7 @@ const cart = ({ data }: any) => {
                   </h4>
                 </div>
                 <div className="col align-self-center text-right text-muted">
-                  3 items
+                  Your items below
                 </div>
               </div>
             </div>
