@@ -14,8 +14,11 @@ export const getStaticProps = async () => {
 };
 
 const cart = ({ data }: any) => {
+  const [code, setcode] = useState("");
   console.log(data);
   let total = 0;
+
+
 
   return (
     <div>
@@ -94,7 +97,25 @@ const cart = ({ data }: any) => {
                 </option>
               </select>
               <p>GIVE CODE</p>
-              <input id="code" placeholder="Enter your code" />
+              <input id="code" 
+              placeholder="Enter your code" 
+              onChange={(e) => setcode(e.target.value)}/>
+              <button
+            type="button"
+            className="btn btn-outline-primary"
+            onClick={(setcode:any)=>{
+ 
+
+              if( setcode==="rakia"){
+                console.log("hello")
+                alert("you will pay 50%")
+                return total=total/2
+                
+              }
+            }}
+          >
+            try it
+          </button>
             </form>
             <div
               className="row"
