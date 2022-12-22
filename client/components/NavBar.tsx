@@ -23,7 +23,7 @@ const NavBar = () => {
           <a style={{ marginLeft: '15%' }} className="nav-item nav-link " style={{color:'white'}} href="/" ><h4>Home</h4> </a>
           <a style={{ marginLeft: '15%' }} className="nav-item nav-link" style={{color:'white'}} href="/products"><h4>Products</h4></a>
           <a style={{ marginLeft: '15%' }} className="nav-item nav-link" style={{color:'white'}} href="/cart"><h4>Cart</h4></a>
-          <a style={{ marginLeft: '15%' }} className="nav-item nav-link" style={{color:'white'}} href="/Contact"><h4>contact</h4></a>
+          <a style={{ marginLeft: '15%' }} className="nav-item nav-link" style={{color:'white'}} href="/Contact"><h4>Contact</h4></a>
 
         </div>
       </div>

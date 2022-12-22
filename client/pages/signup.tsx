@@ -74,7 +74,6 @@ function Signup() {
             className="form-control mt-1"
             placeholder="Enter password"
             onChange={(e)=>setPassword(e.target.value)}
-            
           />
         </div>
         <div className="form-group mt-3">
@@ -88,7 +87,7 @@ function Signup() {
           />
         </div>
         <div className="d-grid gap-2 mt-3">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" style={{background:"black", borderColor:"black"}}>
             Submit
           </button>
         </div>
