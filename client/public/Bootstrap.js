@@ -27,8 +27,9 @@ export default function BootstrapCarousel() {
             <button
               className="btn btn-secondary"
              style={{ backgroundColor: "white", color: "black" }}
-            ><Link href={item.href}>
-              Visit Products</Link>
+            >
+              <h5 id="button"><Link href={item.href}>
+              Visit Products</Link></h5>
             </button>
           </Carousel.Caption>
         </Carousel.Item>

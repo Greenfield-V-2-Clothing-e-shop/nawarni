@@ -85,17 +85,6 @@ const Footer = () => {
                 <a href="#!" className="text-reset">Help</a>
               </p>
             </div>
-    
-            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-              <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
-              <p>
-                <i className="fas fa-envelope me-3"></i>
-                https://github.com/Ahmedhenchiri
-              </p>
-              <p><i className="fas fa-phone me-3"></i>  https://github.com/abderrahim-ouertani</p>
-              <p><i className="fas fa-print me-3"></i>  https://github.com/AhmedTrifi</p>
-            </div>
           </div>
         </div>
       </section>
@@ -104,7 +93,7 @@ const Footer = () => {
       
       <div className="text-center p-4" style={{backgroundColor: "rgba(0, 0, 0, 0.05)"}}>
         © 2022 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">Trendy-Shop</a>
+        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">NAWARNI</a>
       </div>
       
     </footer>

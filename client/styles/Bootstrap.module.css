@@ -18,6 +18,10 @@
     font-size: 35px;
     color: rgb(255, 255, 255);
   }
+
   /* End Bootstrap carousel */
-  
+  #button{
+    color: brown;
+    font-size: xx-small;
+  }
   
