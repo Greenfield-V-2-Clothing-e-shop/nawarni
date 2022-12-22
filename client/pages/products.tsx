@@ -32,7 +32,7 @@ const Products = (props:any) => {
  console.log(props.tshirt);
  
 const [prod,setProd]=useState(props.products)
-console.log(prod);
+console.log(prod)
 
 
 
