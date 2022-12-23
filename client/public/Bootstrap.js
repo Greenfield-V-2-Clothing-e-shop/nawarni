@@ -1,12 +1,15 @@
 //carousels/Bootstrap.js
-import { useState } from 'react';
-import { items } from './Items.json';
-import { Carousel } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from '../styles/Bootstrap.module.css';
+import { useState } from "react";
+import { items } from "./Items.json";
+import { Carousel } from "react-bootstrap";
+import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "../styles/Bootstrap.module.css";
+// import { link } from "fs";
 export default function BootstrapCarousel() {
   const { bootstrap } = items;
   const [index, setIndex] = useState(0);
+
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
@@ -23,11 +26,11 @@ export default function BootstrapCarousel() {
 
             <button
               className="btn btn-secondary"
-              onClick={() => (window.location.href = '/products')}
+             style={{ backgroundColor: "white", color: "black" }}
             >
-              Visit Products
+              <h5 id="button"><Link href={item.href}>
+              Visit Products</Link></h5>
             </button>
-
           </Carousel.Caption>
         </Carousel.Item>
       ))}

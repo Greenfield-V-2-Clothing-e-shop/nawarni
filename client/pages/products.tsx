@@ -13,13 +13,7 @@ export const getStaticProps=async()=>{
 return {
   props:{products:data,tshirt:tshirt,Jean:Jean,Baskets:Baskets}
 }
-
 }
-
-
-
-
-
 const Products = (props:any) => {
  const add =(body :any)=>{
     axios.post("http://localhost:5000/cart/cart",body)
@@ -32,13 +26,14 @@ const Products = (props:any) => {
  console.log(props.tshirt);
  
 const [prod,setProd]=useState(props.products)
-console.log(prod);
+console.log(prod)
 
 
 
   return (
 
 <>
+
 
 <div className='container px-4 px-lg-5 mt-5'>
 <div className="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">

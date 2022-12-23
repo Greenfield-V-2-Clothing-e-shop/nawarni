@@ -2,7 +2,7 @@ import React from 'react';
 import { Router } from 'next/router';
 import { useState } from 'react';
 import axios from 'axios';
-
+import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export const getStaticProps = async () => {
   const res = await axios.get('http://localhost:5000/cart/cart');
@@ -14,8 +14,11 @@ export const getStaticProps = async () => {
 };
 
 const cart = ({ data }: any) => {
+  const [code, setcode] = useState("");
   console.log(data);
   let total = 0;
+
+
 
   return (
     <div>
@@ -30,7 +33,7 @@ const cart = ({ data }: any) => {
                   </h4>
                 </div>
                 <div className="col align-self-center text-right text-muted">
-                  3 items
+                  Your items below
                 </div>
               </div>
             </div>
@@ -70,8 +73,7 @@ const cart = ({ data }: any) => {
               );
             })}
             <div className="back-to-shop">
-              <a href="#"></a>
-              <span className="text-muted">⬅️ Back to shop</span>
+           <Link href="/products">⬅️back to products</Link>
             </div>
           </div>
           <div className="col-md-4 summary ">
@@ -95,7 +97,25 @@ const cart = ({ data }: any) => {
                 </option>
               </select>
               <p>GIVE CODE</p>
-              <input id="code" placeholder="Enter your code" />
+              <input id="code" 
+              placeholder="Enter your code" 
+              onChange={(e) => setcode(e.target.value)}/>
+              <button
+            type="button"
+            className="btn btn-outline-primary"
+            onClick={(setcode:any)=>{
+ 
+
+              if( setcode==="rakia"){
+                console.log("hello")
+                alert("you will pay 50%")
+                return total=total/2
+                
+              }
+            }}
+          >
+            try it
+          </button>
             </form>
             <div
               className="row"
