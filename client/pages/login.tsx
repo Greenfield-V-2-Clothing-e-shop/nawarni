@@ -4,6 +4,35 @@ import React, { useState } from 'react'
 import { useRouter } from "next/router";
 import axios from 'axios'
 const Login = () => {
+  // const [email, setEmail] = useState<string>("");
+  // const [password, setPassword] = useState<string>("");
+
+  //  const router = useRouter()
+  // async function handleLogin(event: React.FormEvent) {
+  //   event.preventDefault();
+
+  //   try {
+  //     const response = await axios.post("http://localhost:5000/user/login", {
+  //       email,
+  //       password,
+
+  //       //  await Router.push("/")
+  //     })
+
+  //     if(response.data.role === "ADMIN"){
+  //       return router.push('admin/admin')
+  //     }else {
+  //     router.push('/')
+  //   }
+
+  //     // Handle successful login
+  //     alert(response.data.message)
+  //     console.log(response)
+  //   } catch (error) {
+  //     console.log(error);
+
+  //   }
+  // }
   const router = useRouter()
 
     const [email, setEmail] = useState("");
@@ -22,7 +51,7 @@ async function handleSubmit(event:any){
       router.push('/admin/admin')
     }
     else {
-      router.push("/Home")
+      router.push("/")
        localStorage.setItem("token", user.data.token);
       localStorage.setItem("id", user.data.id);
     }
@@ -64,7 +93,7 @@ async function handleSubmit(event:any){
           </button>
         </div>
         <p className="forgot-password text-right mt-2">
-          Forgot <a href="#">password?</a>
+           <a href="/signup">create account?</a>
         </p>
       </div>
     </form>
