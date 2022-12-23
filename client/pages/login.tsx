@@ -90,8 +90,7 @@ async function handleSubmit(event:any){
         <div className="d-grid gap-2 mt-3">
           <button type="submit" className="btn btn-primary" style={{background:"black", borderColor:"black"}}>
             Submit
-          </button>
-        </div>
+          </button></div>
         <p className="forgot-password text-right mt-2">
            <a href="/signup">create account?</a>
         </p>
