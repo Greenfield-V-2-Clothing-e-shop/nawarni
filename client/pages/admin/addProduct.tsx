@@ -1,94 +1,94 @@
+import React, {useState} from 'react'
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
-//@ts-nocheck
-import React , { useEffect, useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
 
-function update() {
-  const [form, setForm] = useState({});
 
-  const router = useRouter();
-  const ID = router.query.id;
-  useEffect(() => {
-    const getOne = () => {
-      axios
-        .get(`http://localhost:5000/prod/${ID}`)
-        // console.log(router.query.id);
-        .then((response) => {
-          console.log(response.data, "________________");
-          setForm(response.data);
+
+
+function addProduct() {
+    const router = useRouter();
+    const [product, setProduct] = useState("");
+    const [category, setCategory] = useState("");
+    const [image, setImage] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+
+    const addProduct = async (event: any) => {
+      try {
+        event.preventDefault();
+        await axios.post("http://localhost:5000/prod/prod", {
+          Product: product,
+          Category: category,
+          Description: description,
+          ImageUrl: image,
+          Price: price,
         });
+
+        router.push("/admin/admin");
+      } catch (error) {
+        console.log(error);
+      }
     };
-    getOne();
-  }, [router]);
-
-  const handleChange = (e)=>{
-    setForm({ ...form,
-
-      [e.target.name]:e.target.value
-    })
-  }
-console.log(form);
-const E =(e)=>{
-  e.preventDefault()
-  axios
-  .put(`http://localhost:5000/prod/${ID}`, form)
-  .then((res) => {
-    // alert("hello world");
-    router.push("/admin/admin")
-    console.log(res.data)
-      })
-        
-        
-}
-
   return (
     <div>
       <div className="container">
         <div className="mx-auto w-full max-w-[550px]">
-          <form className="ba7lous " onSubmit={E}>
+          <form onSubmit={addProduct} className="ba7lous ">
             <div className="mb-5">
               <label className="blok"> Product :</label>
               <input
                 type="text"
-                name="Product"
-                onChange={handleChange}
+                name="name"
+                id="name"
                 placeholder="Choose Your Product"
-                defaultValue={form.Product}
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                value={product}
+                onChange={(element) => {
+                  setProduct(element.target.value);
+                }}
               />
             </div>
             <div className="mb-5">
               <label className="blok"> Category :</label>
               <input
                 type="text"
-                name="Category"
-                onChange={handleChange}
-                defaultValue={form.Category}
+                name="text"
+                id="email"
                 placeholder="Category"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                value={category}
+                onChange={(element) => {
+                  setCategory(element.target.value);
+                }}
               />
             </div>
             <div className="mb-5">
               <label className="blok"> Image :</label>
               <input
                 type="text"
-                name="ImageUrl"
-                 defaultValue={form.ImageUrl}
+                name="subject"
+                id="subject"
                 placeholder="Enter your image url"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                onChange={handleChange}
+                value={image}
+                onChange={(element) => {
+                  setImage(element.target.value);
+                }}
               />
             </div>
             <div className="mb-5">
               <label className="blok"> Price $ :</label>
               <input
                 type="text"
-                name="Price"
-                 defaultValue={form.Price}
-                onChange={handleChange}
+                name="subject"
+                id="subject"
                 placeholder="Your Price here ..."
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                value={price}
+                onChange={(element) => {
+                  setPrice(element.target.value);
+                }}
               />
             </div>
 
@@ -96,17 +96,19 @@ const E =(e)=>{
               <label className="blok"> Description :</label>
               <input
                 type="text"
-                name="Description"
-                 defaultValue={form.Description}
-                onChange={handleChange}
+                name="message"
+                id="message"
                 placeholder="Type your Description"
                 className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                value={description}
+                onChange={(element) => {
+                  setDescription(element.target.value);
+                }}
               ></input>
             </div>
             <div>
-              <button type="submit" className="ba7lousU"
-            >
-                Update
+              <button className="btn-add-p" type="submit">
+                Add Product
               </button>
             </div>
           </form>
@@ -116,4 +118,4 @@ const E =(e)=>{
   );
 }
 
-export default update;
+export default addProduct

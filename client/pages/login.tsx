@@ -4,40 +4,38 @@ import React, { useState } from 'react'
 import { useRouter } from "next/router";
 import axios from 'axios'
 const Login = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const router = useRouter()
 
-   const router = useRouter()
-  async function handleLogin(event: React.FormEvent) {
+    const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+async function handleSubmit(event:any){
+
+  try {
     event.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:5000/user/login", {
-        email,
-        password,
-
-        //  await Router.push("/")
-      })
-
-      if(response.data.role === "ADMIN"){
-        return router.push('admin/admin')
-      }else {
-      router.push('/')
+    const user = await axios.post("http://localhost:5000/user/login", {
+      email,
+      password,
+    })
+    if (email==="admin@gmail.com"){
+      router.push('/admin/admin')
     }
-
-      // Handle successful login
-      alert(response.data.message)
-      console.log(response)
-    } catch (error) {
-      console.log(error);
-
+    else {
+      router.push("/Home")
+       localStorage.setItem("token", user.data.token);
+      localStorage.setItem("id", user.data.id);
     }
+  } catch (error) {
+    console.log(error);
+    alert("bad cred");
   }
+}
 
   return (
     <div className="backLogin">
     <div className="Auth-form-container">
-    <form className="Auth-form" onSubmit={handleLogin}>
+    <form className="Auth-form" onSubmit={handleSubmit}>
       <div className="Auth-form-content">
         <h3 className="Auth-form-title">Login</h3>
         <div className="form-group mt-3">

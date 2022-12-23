@@ -63,7 +63,9 @@ console.log(search)
       <form className="form-inline">
         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=> getSearch(e.target.value)} /> 
       </form>
-        <button type="button" onClick={() => {
+        <button type="button" 
+        style={{backgroundColor:"transparent", borderColor:"transparent"}}
+        onClick={() => {
         router.push({
           pathname: "/SearchedProduct",
           query: {
