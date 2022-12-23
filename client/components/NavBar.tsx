@@ -1,16 +1,49 @@
-import { useEffect, useState } from 'react';
+import React from "react";
+import { useState, useEffect } from "react";
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { userAgent } from 'next/server';
+import axios, { AxiosResponse } from "axios";
+import { useRouter } from 'next/router'
 
-const NavBar = () => {
+interface Product {
+  Product: String;
+  Category: String;
+  Description: String;
+  ImageUrl: String;
+  Price: String;
+
+}
+
+const NavBar = (event:any) => {
+  const router = useRouter()
   const [userIsAuthenticated, setUserIsAuthenticated] = useState(false);
+  const [products, setProducts]= useState<any>([])
+  const [search, getSearch]=useState<string>('')
   // Check if the user is authenticated
+
+
+const getProducts = async()=>{
+  try {
+    const res = await axios.get('http://localhost:5000/prod/prod');
+    const data= res.data
+    setProducts(JSON.stringify(data))
+    return {data}
+  } catch(error){
+    return {error}
+  }
+}
+
+console.log(search)
+
   useEffect(() => {
+    getProducts()
     if (userIsAuthenticated) {
       setUserIsAuthenticated(true);
     }
   }, []);
+
+
 
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -28,8 +61,18 @@ const NavBar = () => {
         </div>
       </div>
       <form className="form-inline">
-        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=> getSearch(e.target.value)} /> 
       </form>
+        <button type="button" onClick={() => {
+        router.push({
+          pathname: "/SearchedProduct",
+          query: {
+          searched:search,
+          prods:products
+        }
+        })
+      }} >🔎</button>
+      
       <div className="navbar-nav" style={{ height: "60%", width: "20%", marginLeft: "10%" }} >
         {/* {userAgent.role} */}
         {!userIsAuthenticated && (
